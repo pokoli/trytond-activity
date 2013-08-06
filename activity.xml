@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tryton>
+    <data>
+
+        <record model="res.group" id="group_activity_admin">
+            <field name="name">Activities Administration</field>
+        </record>
+        <record model="res.user-res.group" id="user_admin_group_activity_admin">
+            <field name="user" ref="res.user_admin"/>
+            <field name="group" ref="group_activity_admin"/>
+        </record>
+        <record model="res.user-res.group" id="user_trigger_group_activity_admin">
+            <field name="user" ref="res.user_trigger"/>
+            <field name="group" ref="group_activity_admin"/>
+        </record>
+        <record model="res.group" id="group_activity">
+            <field name="name">Activities</field>
+        </record>
+        <record model="res.user-res.group" id="user_admin_group_activity">
+            <field name="user" ref="res.user_admin"/>
+            <field name="group" ref="group_activity"/>
+        </record>
+        <record model="res.user-res.group" id="user_trigger_group_activity">
+            <field name="user" ref="res.user_trigger"/>
+            <field name="group" ref="group_activity"/>
+        </record>
+        <record model="ir.ui.view" id="activity_activity_form_view">
+            <field name="model">activity.activity</field>
+            <field name="type">form</field>
+            <field name="name">activity_activity_form</field>
+        </record>
+        <record model="ir.ui.view" id="activity_activity_tree_view">
+            <field name="model">activity.activity</field>
+            <field name="type">tree</field>
+            <field name="name">activity_activity_tree</field>
+        </record>
+        <record model="ir.action.act_window" id="act_activity_activity">
+            <field name="name">Activity</field>
+            <field name="res_model">activity.activity</field>
+            <field name="search_value"></field>
+            <!-- <field name="domain">[]</field> -->
+            <!-- <field name="context">{}</field> -->
+        </record>
+        <record model="ir.action.act_window.view" id="act_activity_activity_view1">
+            <field name="sequence" eval="10"/>
+            <field name="view" ref="activity_activity_tree_view"/>
+            <field name="act_window" ref="act_activity_activity"/>
+        </record>
+        <record model="ir.action.act_window.view" id="act_activity_activity_view2">
+            <field name="sequence" eval="20"/>
+            <field name="view" ref="activity_activity_form_view"/>
+            <field name="act_window" ref="act_activity_activity"/>
+        </record>
+        <record model="ir.model.access" id="access_activity_activity">
+            <field name="model" search="[('model', '=', 'activity.activity')]"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+        <record model="ir.model.access" id="access_activity_activity_admin">
+            <field name="model" search="[('model', '=', 'activity.activity')]"/>
+            <field name="group" ref="group_activity_admin"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_delete" eval="True"/>
+        </record>
+        <record model="ir.ui.view" id="activity_reference_form_view">
+            <field name="model">activity.reference</field>
+            <field name="type">form</field>
+            <field name="name">activity_reference_form</field>
+        </record>
+        <record model="ir.ui.view" id="activity_reference_tree_view">
+            <field name="model">activity.reference</field>
+            <field name="type">tree</field>
+            <field name="name">activity_reference_tree</field>
+        </record>
+        <record model="ir.action.act_window" id="act_activity_reference">
+            <field name="name">Activity Reference</field>
+            <field name="res_model">activity.reference</field>
+            <field name="search_value"></field>
+            <!-- <field name="domain">[]</field> -->
+            <!-- <field name="context">{}</field> -->
+        </record>
+        <record model="ir.action.act_window.view" id="act_activity_reference_view1">
+            <field name="sequence" eval="10"/>
+            <field name="view" ref="activity_reference_tree_view"/>
+            <field name="act_window" ref="act_activity_reference"/>
+        </record>
+        <record model="ir.action.act_window.view" id="act_activity_reference_view2">
+            <field name="sequence" eval="20"/>
+            <field name="view" ref="activity_reference_form_view"/>
+            <field name="act_window" ref="act_activity_reference"/>
+        </record>
+        <record model="ir.model.access" id="access_activity_reference">
+            <field name="model" search="[('model', '=', 'activity.reference')]"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+        <record model="ir.model.access" id="access_activity_reference_admin">
+            <field name="model" search="[('model', '=', 'activity.reference')]"/>
+            <field name="group" ref="group_activity_admin"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_delete" eval="True"/>
+        </record>
+
+
+        <record model="ir.action.act_window.domain"
+                id="act_activity_tree_domain_call">
+            <field name="name">Calls</field>
+            <field name="sequence" eval="10"/>
+            <field name="domain">[('type', '=', 'call')]</field>
+            <field name="act_window" ref="act_activity_activity"/>
+        </record>
+        <record model="ir.action.act_window.domain" id="act_activity_tree_domain_meeting">
+            <field name="name">Meetings</field>
+            <field name="sequence" eval="20"/>
+            <field name="domain">[('type', '=', 'meeting')]</field>
+            <field name="act_window" ref="act_activity_activity"/>
+        </record>
+        <record model="ir.action.act_window.domain" id="act_activity_tree_domain_email">
+            <field name="name">Email</field>
+            <field name="sequence" eval="30"/>
+            <field name="domain">[('type', '=', 'email')]</field>
+            <field name="act_window" ref="act_activity_activity"/>
+        </record>
+        <record model="ir.action.act_window.domain" id="act_activity_tree_domain_all">
+            <field name="name">All</field>
+            <field name="sequence" eval="1"/>
+            <field name="domain"></field>
+            <field name="act_window" ref="act_activity_activity"/>
+        </record>
+
+
+        <!-- Main Menu -->
+        <menuitem id="menu_activity" name="Activities" sequence="1" 
+            action="act_activity_activity"/>
+        <menuitem parent="menu_activity" id="menu_configuration"
+            name="Configuration"/>
+        
+
+        <record model="ir.ui.menu-res.group" id="menu_configuration_group">
+            <field name="menu" ref="menu_configuration"/>
+            <field name="group" ref="group_activity_admin"/>
+        </record>
+
+        <record model="ir.ui.menu-res.group" id="menu_activity_group">
+            <field name="menu" ref="menu_activity"/>
+            <field name="group" ref="group_activity"/>
+        </record>
+
+        <menuitem action="act_activity_activity" id="menu_activity_activity"
+            parent="menu_activity" sequence="1" name="Activity"/>
+
+        <menuitem action="act_activity_reference" id="menu_activity_reference" 
+            parent="menu_configuration" sequence="1" name="Activity Reference"/>
+    </data>
+</tryton>

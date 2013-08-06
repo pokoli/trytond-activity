@@ -1,0 +1,10 @@
+<tree string="Activity">
+	 <field name="type"/>
+	 <field name="subject"/>
+	 <field name="dtstart"/>
+	 <field name="dtend"/>
+	 <field name="employee"/>
+     <field name="party"/>
+	 <field name="resource"/>
+	 <field name="state"/>
+</tree>
