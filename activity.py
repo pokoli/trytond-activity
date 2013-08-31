@@ -44,6 +44,12 @@ class Activity(ModelSQL, ModelView):
     party = fields.Many2One('party.party', 'Party',
         on_change_with=['resource'])
 
+    @classmethod
+    def __setup__(cls):
+        super(Activity, cls).__setup__()
+        cls._order.insert(0, ('dtstart', 'DESC'))
+        cls._order.insert(1, ('subject', 'DESC'))
+
     def on_change_with_party(self, name=None):
 
         if self.resource is None:
