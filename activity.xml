@@ -136,13 +136,11 @@
             <field name="act_window" ref="act_activity_activity"/>
         </record>
 
-
         <!-- Main Menu -->
-        <menuitem id="menu_activity" name="Activities" sequence="1" 
-            action="act_activity_activity"/>
+        <menuitem id="menu_activity" name="Activities" sequence="1"/>
         <menuitem parent="menu_activity" id="menu_configuration"
-            name="Configuration"/>
-        
+            name="Configuration" sequence="0" icon="tryton-preferences"/>
+
 
         <record model="ir.ui.menu-res.group" id="menu_configuration_group">
             <field name="menu" ref="menu_configuration"/>
@@ -155,9 +153,9 @@
         </record>
 
         <menuitem action="act_activity_activity" id="menu_activity_activity"
-            parent="menu_activity" sequence="1" name="Activity"/>
+            parent="menu_activity" sequence="1" name="Activities"/>
 
-        <menuitem action="act_activity_reference" id="menu_activity_reference" 
+        <menuitem action="act_activity_reference" id="menu_activity_reference"
             parent="menu_configuration" sequence="1" name="Activity Reference"/>
     </data>
 </tryton>
