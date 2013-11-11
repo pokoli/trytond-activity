@@ -3,3 +3,5 @@
 #license terms.
 
 from .test_activity import suite
+
+__all__ = ['suite']
