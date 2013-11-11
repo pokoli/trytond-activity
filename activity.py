@@ -60,7 +60,8 @@ class Activity(ModelSQL, ModelView):
         if model == 'party.party':
             return self.resource.id
         if 'party' in Relation._fields.keys():
-            return self.resource.party.id
+            if self.resource.party:
+                return self.resource.party.id
         return None
 
     @staticmethod
