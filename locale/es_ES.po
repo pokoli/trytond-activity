@@ -179,3 +179,11 @@ msgstr "Email"
 msgctxt "selection:activity.activity,type:"
 msgid "Meeting"
 msgstr "Reunión"
+
+msgctxt "view:activity.activity:"
+msgid "Activity"
+msgstr "Actividad"
+
+msgctxt "view:activity.reference:"
+msgid "Activity Reference"
+msgstr "Referencia actividad"
