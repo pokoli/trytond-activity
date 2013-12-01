@@ -51,8 +51,7 @@ class Activity(ModelSQL, ModelView):
         cls._order.insert(1, ('subject', 'DESC'))
 
     def on_change_with_party(self, name=None):
-
-        if self.resource is None:
+        if self.resource is None or self.resource.id < 0:
             return None
 
         model = self.resource and str(self.resource).partition(',')[0]
