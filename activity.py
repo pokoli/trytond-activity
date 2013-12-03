@@ -1,15 +1,12 @@
-#This file is part of activity module for Tryton. The COPYRIGHT file at
-#the top level of this repository contains the full copyright notices and
-#license terms.
+# The COPYRIGHT file at the top level of this repository contains the full
+# copyright notices and license terms.
+import datetime
 
 from trytond.model import ModelSQL, ModelView, fields
 from trytond.pool import Pool
 from trytond.transaction import Transaction
 
-import datetime
-
 __all__ = ['ActivityReference', 'Activity']
-
 
 
 class ActivityReference(ModelSQL, ModelView):
@@ -34,7 +31,7 @@ class Activity(ModelSQL, ModelView):
     dtstart = fields.DateTime('Start Date', required=True, select=True)
     dtend = fields.DateTime('End Date', select=True)
     state = fields.Selection('get_state', 'State', required=True)
-    description = fields.Text('Description', required=True)
+    description = fields.Text('Description')
     employee = fields.Many2One('company.employee', 'Employee', required=True)
     direction = fields.Selection([
         ('incoming', 'Incoming'),
