@@ -48,17 +48,7 @@ class Activity(ModelSQL, ModelView):
         cls._order.insert(1, ('subject', 'DESC'))
 
     def on_change_with_party(self, name=None):
-        if self.resource is None or self.resource.id < 0:
-            return None
-
-        model = self.resource and str(self.resource).partition(',')[0]
-        Relation = Pool().get(model)
-        if model == 'party.party':
-            return self.resource.id
-        if 'party' in Relation._fields.keys():
-            if self.resource.party:
-                return self.resource.party.id
-        return None
+        return Activity._resource_party(self.resource)
 
     @staticmethod
     def default_dtstart():
@@ -80,6 +70,25 @@ class Activity(ModelSQL, ModelView):
 
     @staticmethod
     def default_resource():
+        return None
+
+    @classmethod
+    def default_party(cls):
+        resource = cls.default_resource()
+        return Activity._resource_party(resource)
+
+    @staticmethod
+    def _resource_party(resource):
+        if resource is None or resource.id < 0:
+            return None
+
+        model = resource and str(resource).partition(',')[0]
+        Relation = Pool().get(model)
+        if model == 'party.party':
+            return resource.id
+        if 'party' in Relation._fields.keys():
+            if resource.party:
+                return resource.party.id
         return None
 
     @staticmethod
