@@ -19,6 +19,7 @@ class ActivityReference(ModelSQL, ModelView):
 class Activity(ModelSQL, ModelView):
     'Activity'
     __name__ = "activity.activity"
+    _rec_name = 'subject'
 
     type = fields.Selection([
         ('call', 'Call'),
