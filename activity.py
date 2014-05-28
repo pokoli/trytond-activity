@@ -31,7 +31,11 @@ class Activity(ModelSQL, ModelView):
     resource = fields.Reference('Resource', selection='get_resource')
     dtstart = fields.DateTime('Start Date', required=True, select=True)
     dtend = fields.DateTime('End Date', select=True)
-    state = fields.Selection('get_state', 'State', required=True)
+    state = fields.Selection([
+            ('planned', 'Planned'),
+            ('held', 'Held'),
+            ('not_held', 'Not Held'),
+            ], 'State', required=True)
     description = fields.Text('Description')
     employee = fields.Many2One('company.employee', 'Employee', required=True)
     direction = fields.Selection([
@@ -91,14 +95,6 @@ class Activity(ModelSQL, ModelView):
             if resource.party:
                 return resource.party.id
         return None
-
-    @staticmethod
-    def get_state():
-        return [
-            ('planned', 'Planned'),
-            ('held', 'Held'),
-            ('not_held', 'Not Held'),
-            ]
 
     @classmethod
     def get_resource(cls):
