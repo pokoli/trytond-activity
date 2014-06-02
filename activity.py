@@ -43,8 +43,7 @@ class Activity(ModelSQL, ModelView):
         ('outgoing', 'Outgoing'),
         ], 'Direction', required=True)
     location = fields.Char('Location')
-    party = fields.Many2One('party.party', 'Party',
-        on_change_with=['resource'])
+    party = fields.Many2One('party.party', 'Party')
 
     @classmethod
     def __setup__(cls):
@@ -52,6 +51,7 @@ class Activity(ModelSQL, ModelView):
         cls._order.insert(0, ('dtstart', 'DESC'))
         cls._order.insert(1, ('subject', 'DESC'))
 
+    @fields.depends('resource')
     def on_change_with_party(self, name=None):
         return Activity._resource_party(self.resource)
 
