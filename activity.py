@@ -22,10 +22,10 @@ class Activity(ModelSQL, ModelView):
     _rec_name = 'subject'
 
     type = fields.Selection([
-        ('call', 'Call'),
-        ('meeting', 'Meeting'),
-        ('email', 'Email'),
-        ], 'Type', required=True)
+            ('call', 'Call'),
+            ('meeting', 'Meeting'),
+            ('email', 'Email'),
+            ], 'Type', required=True)
 
     subject = fields.Char('Subject', required=True)
     resource = fields.Reference('Resource', selection='get_resource')
@@ -74,8 +74,12 @@ class Activity(ModelSQL, ModelView):
         return 'incoming'
 
     @staticmethod
+    def default_type():
+        return 'meeting'
+
+    @staticmethod
     def default_resource():
-        return None
+        return ''
 
     @classmethod
     def default_party(cls):
@@ -84,8 +88,8 @@ class Activity(ModelSQL, ModelView):
 
     @staticmethod
     def _resource_party(resource):
-        if resource is None or resource.id < 0:
-            return None
+        if not resource or resource.id < 0:
+            return
 
         model = resource and str(resource).partition(',')[0]
         Relation = Pool().get(model)
@@ -100,7 +104,7 @@ class Activity(ModelSQL, ModelView):
     def get_resource(cls):
         'Return list of Model names for resource Reference'
         ActivityType = Pool().get('activity.reference')
-        res = [(None, '')]
+        res = [('', '')]
         for _type in ActivityType.search([]):
             res.append((_type.model.model, _type.model.name))
         return res
