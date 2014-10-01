@@ -4,6 +4,7 @@ from setuptools import setup
 import re
 import os
 import ConfigParser
+import subprocess
 
 MODULE = 'activity'
 PREFIX = 'nantic'
@@ -22,6 +23,8 @@ for key in ('depends', 'extras_depend', 'xml'):
 major_version, minor_version, _ = info.get('version', '0.0.1').split('.', 2)
 major_version = int(major_version)
 minor_version = int(minor_version)
+output = subprocess.check_output(["hg", "parent",  "--template", "{rev}"])
+revision = int(output)
 
 requires = []
 for dep in info.get('depends', []):
@@ -37,7 +40,7 @@ tests_require = ['proteus >= %s.%s, < %s.%s' %
     (major_version, minor_version, major_version, minor_version + 1)]
 
 setup(name='%s_%s' % (PREFIX, MODULE),
-    version=info.get('version', '0.0.1'),
+    version= "%(major_version)s.%(minor_version)s_rev%(revision)s"% locals(),
     description='Tryton module to manage Activities',
     long_description=read('README'),
     author='NaN·tic',
