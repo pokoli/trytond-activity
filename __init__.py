@@ -3,12 +3,16 @@
 #license terms.
 
 from trytond.pool import Pool
+from .configuration import *
 from .activity import *
 from .party import *
 
 
 def register():
     Pool.register(
+        Configuration,
+        CompanyConfiguration,
+        ActivityType,
         ActivityReference,
         Activity,
         Party,

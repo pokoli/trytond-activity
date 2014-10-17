@@ -1,29 +1,25 @@
 <?xml version="1.0"?>
-<!--The COPYRIGHT file at the top level of this repository             
+<!--The COPYRIGHT file at the top level of this repository
 contains the full copyright notices and license terms. -->
 <form string="Activity">
 	<label name="subject"/>
-	<field name="subject" colspan="3"/>
-    <label name="type"/>
-    <field name="type"/>
-    <label name="direction"/>
-    <field name="direction"/>
+	<field name="subject"/>
+	<label name="code"/>
+	<field name="code"/>
+    <label name="activity_type"/>
+    <field name="activity_type" widget="selection"/>
 	<label name="employee"/>
 	<field name="employee"/>
-    <newline/>
 	<label name="dtstart"/>
 	<field name="dtstart"/>
 	<label name="dtend"/>
 	<field name="dtend"/>
-    <newline/>
 	<label name="resource"/>
     <field name="resource"/>
     <label name="party"/>
     <field name="party"/>
-    <newline/>
 	<label name="location"/>
 	<field name="location" colspan="3"/>
-
     <notebook>
         <page name="description">
     	    <field name="description" colspan="4"/>

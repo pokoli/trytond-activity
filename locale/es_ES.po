@@ -1,6 +1,22 @@
-# 
+#
 msgid ""
 msgstr "Content-Type: text/plain; charset=utf-8\n"
+
+msgctxt "error:activity.activity:"
+msgid ""
+"There is no activity sequence defined. Please define on in activity "
+"configuration."
+msgstr ""
+"No se ha definido ninguna secuencia para las actividades. Por favor, defina "
+"uno en la configuración."
+
+msgctxt "field:activity.activity,activity_type:"
+msgid "Type"
+msgstr "Tipo"
+
+msgctxt "field:activity.activity,code:"
+msgid "Code"
+msgstr "Código"
 
 msgctxt "field:activity.activity,create_date:"
 msgid "Create Date"
@@ -13,10 +29,6 @@ msgstr "Usuario creación"
 msgctxt "field:activity.activity,description:"
 msgid "Description"
 msgstr "Descripción"
-
-msgctxt "field:activity.activity,direction:"
-msgid "Direction"
-msgstr "Dirección"
 
 msgctxt "field:activity.activity,dtend:"
 msgid "End Date"
@@ -58,15 +70,71 @@ msgctxt "field:activity.activity,subject:"
 msgid "Subject"
 msgstr "Asunto"
 
-msgctxt "field:activity.activity,type:"
-msgid "Type"
-msgstr "Tipo"
-
 msgctxt "field:activity.activity,write_date:"
 msgid "Write Date"
 msgstr "Fecha modificación"
 
 msgctxt "field:activity.activity,write_uid:"
+msgid "Write User"
+msgstr "Usuario modificación"
+
+msgctxt "field:activity.configuration,activity_sequence:"
+msgid "Activity Sequence"
+msgstr "Secuencia actividad"
+
+msgctxt "field:activity.configuration,create_date:"
+msgid "Create Date"
+msgstr "Fecha de creación"
+
+msgctxt "field:activity.configuration,create_uid:"
+msgid "Create User"
+msgstr "Usuario de creación"
+
+msgctxt "field:activity.configuration,id:"
+msgid "ID"
+msgstr "Identificador"
+
+msgctxt "field:activity.configuration,rec_name:"
+msgid "Name"
+msgstr "Nombre"
+
+msgctxt "field:activity.configuration,write_date:"
+msgid "Write Date"
+msgstr "Fecha modificación"
+
+msgctxt "field:activity.configuration,write_uid:"
+msgid "Write User"
+msgstr "Usuario modificación"
+
+msgctxt "field:activity.configuration.company,activity_sequence:"
+msgid "Activity Sequence"
+msgstr "Secuencia actividad"
+
+msgctxt "field:activity.configuration.company,company:"
+msgid "Company"
+msgstr "Empresa"
+
+msgctxt "field:activity.configuration.company,create_date:"
+msgid "Create Date"
+msgstr "Fecha de creación"
+
+msgctxt "field:activity.configuration.company,create_uid:"
+msgid "Create User"
+msgstr "Usuario de creación"
+
+msgctxt "field:activity.configuration.company,id:"
+msgid "ID"
+msgstr "Identificador"
+
+msgctxt "field:activity.configuration.company,rec_name:"
+msgid "Name"
+msgstr "Nombre"
+
+msgctxt "field:activity.configuration.company,write_date:"
+msgid "Write Date"
+msgstr "Fecha modificación"
+
+msgctxt "field:activity.configuration.company,write_uid:"
 msgid "Write User"
 msgstr "Usuario modificación"
 
@@ -98,17 +166,89 @@ msgctxt "field:activity.reference,write_uid:"
 msgid "Write User"
 msgstr "Usuario modificación"
 
+msgctxt "field:activity.type,active:"
+msgid "Active"
+msgstr "Activo"
+
+msgctxt "field:activity.type,create_date:"
+msgid "Create Date"
+msgstr "Fecha de creación"
+
+msgctxt "field:activity.type,create_uid:"
+msgid "Create User"
+msgstr "Usuario de creación"
+
+msgctxt "field:activity.type,id:"
+msgid "ID"
+msgstr "Identificador"
+
+msgctxt "field:activity.type,name:"
+msgid "Name"
+msgstr "Nombre"
+
+msgctxt "field:activity.type,rec_name:"
+msgid "Name"
+msgstr "Nombre"
+
+msgctxt "field:activity.type,sequence:"
+msgid "Sequence"
+msgstr "Secuencia"
+
+msgctxt "field:activity.type,write_date:"
+msgid "Write Date"
+msgstr "Fecha modificación"
+
+msgctxt "field:activity.type,write_uid:"
+msgid "Write User"
+msgstr "Usuario modificación"
+
 msgctxt "model:activity.activity,name:"
 msgid "Activity"
 msgstr "Actividad"
+
+msgctxt "model:activity.configuration,name:"
+msgid "Activity Configuration"
+msgstr "Configuración actividades"
+
+msgctxt "model:activity.configuration.company,name:"
+msgid "Activity Configuration per Company"
+msgstr "Configuración actividades por empresa"
 
 msgctxt "model:activity.reference,name:"
 msgid "Activity Reference"
 msgstr "Referencia actividad"
 
+msgctxt "model:activity.type,name:"
+msgid "Activity Type"
+msgstr "Tipo actividad"
+
+msgctxt "model:activity.type,name:incoming_call_type"
+msgid "Incoming Call"
+msgstr "Llamada entrante"
+
+msgctxt "model:activity.type,name:incoming_email_type"
+msgid "Incoming Email"
+msgstr "Email entrante"
+
+msgctxt "model:activity.type,name:meeting_type"
+msgid "Meeting"
+msgstr "Reunión"
+
+msgctxt "model:activity.type,name:outgoing_call_type"
+msgid "Outgoing Call"
+msgstr "Llamada saliente"
+
+msgctxt "model:activity.type,name:outgoing_email_type"
+msgid "Outgoing Email"
+msgstr "Email saliente"
+
 msgctxt "model:ir.action,name:act_activity_activity"
 msgid "Activity"
 msgstr "Actividad"
+
+msgctxt "model:ir.action,name:act_activity_configuration"
+msgid "Configuration"
+msgstr "Configuración"
 
 msgctxt "model:ir.action,name:act_activity_form"
 msgid "Activities"
@@ -118,23 +258,17 @@ msgctxt "model:ir.action,name:act_activity_reference"
 msgid "Activity Reference"
 msgstr "Referencia actividad"
 
-msgctxt "model:ir.action.act_window.domain,name:act_activity_tree_domain_all"
-msgid "All"
-msgstr "Todos"
+msgctxt "model:ir.action,name:act_activity_type"
+msgid "Activity Type"
+msgstr "Tipo actividad"
 
-msgctxt "model:ir.action.act_window.domain,name:act_activity_tree_domain_call"
-msgid "Calls"
-msgstr "Llamadas"
+msgctxt "model:ir.sequence,name:sequence_activity"
+msgid "Activity"
+msgstr "Actividad"
 
-msgctxt ""
-"model:ir.action.act_window.domain,name:act_activity_tree_domain_email"
-msgid "Email"
-msgstr "Email"
-
-msgctxt ""
-"model:ir.action.act_window.domain,name:act_activity_tree_domain_meeting"
-msgid "Meetings"
-msgstr "Reuniones"
+msgctxt "model:ir.sequence.type,name:sequence_type_activity"
+msgid "Activity"
+msgstr "Actividad"
 
 msgctxt "model:ir.ui.menu,name:menu_activity"
 msgid "Activities"
@@ -144,9 +278,17 @@ msgctxt "model:ir.ui.menu,name:menu_activity_activity"
 msgid "Activities"
 msgstr "Actividades"
 
+msgctxt "model:ir.ui.menu,name:menu_activity_configuration"
+msgid "Configuration"
+msgstr "Configuración"
+
 msgctxt "model:ir.ui.menu,name:menu_activity_reference"
 msgid "Activity Reference"
 msgstr "Referencia actividad"
+
+msgctxt "model:ir.ui.menu,name:menu_activity_type"
+msgid "Activity Type"
+msgstr "Tipo actividad"
 
 msgctxt "model:ir.ui.menu,name:menu_configuration"
 msgid "Configuration"
@@ -160,42 +302,22 @@ msgctxt "model:res.group,name:group_activity_admin"
 msgid "Activities Administration"
 msgstr "Administración actividades"
 
-msgctxt "selection:activity.activity,direction:"
-msgid "Incoming"
-msgstr "Entrante"
-
-msgctxt "selection:activity.activity,direction:"
-msgid "Outgoing"
-msgstr "Saliente"
-
-msgctxt "selection:activity.activity,state:"
-msgid "Held"
-msgstr "Realizada"
-
-msgctxt "selection:activity.activity,state:"
-msgid "Not Held"
-msgstr "No realizada"
-
-msgctxt "selection:activity.activity,state:"
-msgid "Planned"
-msgstr "Planificada"
-
-msgctxt "selection:activity.activity,type:"
-msgid "Call"
-msgstr "Llamada"
-
-msgctxt "selection:activity.activity,type:"
-msgid "Email"
-msgstr "Email"
-
-msgctxt "selection:activity.activity,type:"
-msgid "Meeting"
-msgstr "Reunión"
+msgctxt "view:activity.activity:"
+msgid "Activities"
+msgstr "Actividades"
 
 msgctxt "view:activity.activity:"
 msgid "Activity"
 msgstr "Actividad"
 
+msgctxt "view:activity.configuration:"
+msgid "Activity Configuration"
+msgstr "Configuración actividades"
+
 msgctxt "view:activity.reference:"
 msgid "Activity Reference"
 msgstr "Referencia actividad"
+
+msgctxt "view:activity.type:"
+msgid "Activity Type"
+msgstr "Tipo actividad"

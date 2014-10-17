@@ -108,32 +108,45 @@
             <field name="perm_create" eval="True"/>
             <field name="perm_delete" eval="True"/>
         </record>
-
-
-        <record model="ir.action.act_window.domain"
-                id="act_activity_tree_domain_call">
-            <field name="name">Calls</field>
+        <record model="ir.ui.view" id="activity_type_form_view">
+            <field name="model">activity.type</field>
+            <field name="type">form</field>
+            <field name="name">activity_type_form</field>
+        </record>
+        <record model="ir.ui.view" id="activity_type_tree_view">
+            <field name="model">activity.type</field>
+            <field name="type">tree</field>
+            <field name="name">activity_type_tree</field>
+        </record>
+        <record model="ir.action.act_window" id="act_activity_type">
+            <field name="name">Activity Type</field>
+            <field name="res_model">activity.type</field>
+            <field name="search_value"></field>
+        </record>
+        <record model="ir.action.act_window.view" id="act_activity_type_view1">
             <field name="sequence" eval="10"/>
-            <field name="domain">[('type', '=', 'call')]</field>
-            <field name="act_window" ref="act_activity_activity"/>
+            <field name="view" ref="activity_type_tree_view"/>
+            <field name="act_window" ref="act_activity_type"/>
         </record>
-        <record model="ir.action.act_window.domain" id="act_activity_tree_domain_meeting">
-            <field name="name">Meetings</field>
+        <record model="ir.action.act_window.view" id="act_activity_type_view2">
             <field name="sequence" eval="20"/>
-            <field name="domain">[('type', '=', 'meeting')]</field>
-            <field name="act_window" ref="act_activity_activity"/>
+            <field name="view" ref="activity_type_form_view"/>
+            <field name="act_window" ref="act_activity_type"/>
         </record>
-        <record model="ir.action.act_window.domain" id="act_activity_tree_domain_email">
-            <field name="name">Email</field>
-            <field name="sequence" eval="30"/>
-            <field name="domain">[('type', '=', 'email')]</field>
-            <field name="act_window" ref="act_activity_activity"/>
+        <record model="ir.model.access" id="access_activity_type">
+            <field name="model" search="[('model', '=', 'activity.type')]"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
         </record>
-        <record model="ir.action.act_window.domain" id="act_activity_tree_domain_all">
-            <field name="name">All</field>
-            <field name="sequence" eval="1"/>
-            <field name="domain"></field>
-            <field name="act_window" ref="act_activity_activity"/>
+        <record model="ir.model.access" id="access_activity_type_admin">
+            <field name="model" search="[('model', '=', 'activity.type')]"/>
+            <field name="group" ref="group_activity_admin"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_delete" eval="True"/>
         </record>
 
         <!-- Main Menu -->
@@ -141,21 +154,30 @@
         <menuitem parent="menu_activity" id="menu_configuration"
             name="Configuration" sequence="0" icon="tryton-preferences"/>
 
-
-        <record model="ir.ui.menu-res.group" id="menu_configuration_group">
-            <field name="menu" ref="menu_configuration"/>
-            <field name="group" ref="group_activity_admin"/>
-        </record>
-
-        <record model="ir.ui.menu-res.group" id="menu_activity_group">
-            <field name="menu" ref="menu_activity"/>
-            <field name="group" ref="group_activity"/>
-        </record>
-
         <menuitem action="act_activity_activity" id="menu_activity_activity"
             parent="menu_activity" sequence="1" name="Activities"/>
 
         <menuitem action="act_activity_reference" id="menu_activity_reference"
-            parent="menu_configuration" sequence="1" name="Activity Reference"/>
+            parent="menu_configuration" sequence="20"/>
+
+        <menuitem action="act_activity_type" id="menu_activity_type"
+            parent="menu_configuration" sequence="30"/>
+
+        <!-- Default activity types -->
+        <record model="activity.type" id="outgoing_email_type">
+            <field name="name">Outgoing Email</field>
+        </record>
+        <record model="activity.type" id="incoming_email_type">
+            <field name="name">Incoming Email</field>
+        </record>
+        <record model="activity.type" id="outgoing_call_type">
+            <field name="name">Outgoing Call</field>
+        </record>
+        <record model="activity.type" id="incoming_call_type">
+            <field name="name">Incoming Call</field>
+        </record>
+        <record model="activity.type" id="meeting_type">
+            <field name="name">Meeting</field>
+        </record>
     </data>
 </tryton>

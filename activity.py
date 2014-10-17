@@ -5,8 +5,27 @@ import datetime
 from trytond.model import ModelSQL, ModelView, fields
 from trytond.pool import Pool
 from trytond.transaction import Transaction
+from trytond import backend
 
-__all__ = ['ActivityReference', 'Activity']
+__all__ = ['ActivityType', 'ActivityReference', 'Activity']
+
+
+class ActivityType(ModelSQL, ModelView):
+    'Activity Type'
+    __name__ = "activity.type"
+    _order = [('sequence', 'ASC'), ('id', 'ASC')]
+    name = fields.Char('Name', required=True, translate=True)
+    sequence = fields.Integer('Sequence')
+    active = fields.Boolean('Active')
+
+    @staticmethod
+    def default_active():
+        return True
+
+    @staticmethod
+    def order_sequence(tables):
+        table, _ = tables[None]
+        return [table.sequence == None, table.sequence]
 
 
 class ActivityReference(ModelSQL, ModelView):
@@ -19,13 +38,9 @@ class ActivityReference(ModelSQL, ModelView):
 class Activity(ModelSQL, ModelView):
     'Activity'
     __name__ = "activity.activity"
-    _rec_name = 'subject'
 
-    type = fields.Selection([
-            ('call', 'Call'),
-            ('meeting', 'Meeting'),
-            ('email', 'Email'),
-            ], 'Type', required=True)
+    code = fields.Char('Code', readonly=True, select=True)
+    activity_type = fields.Many2One('activity.type', 'Type', required=True)
 
     subject = fields.Char('Subject', required=True)
     resource = fields.Reference('Resource', selection='get_resource')
@@ -38,10 +53,6 @@ class Activity(ModelSQL, ModelView):
             ], 'State', required=True)
     description = fields.Text('Description')
     employee = fields.Many2One('company.employee', 'Employee', required=True)
-    direction = fields.Selection([
-        ('incoming', 'Incoming'),
-        ('outgoing', 'Outgoing'),
-        ], 'Direction', required=True)
     location = fields.Char('Location')
     party = fields.Many2One('party.party', 'Party')
 
@@ -50,10 +61,51 @@ class Activity(ModelSQL, ModelView):
         super(Activity, cls).__setup__()
         cls._order.insert(0, ('dtstart', 'DESC'))
         cls._order.insert(1, ('subject', 'DESC'))
+        cls._error_messages.update({
+                'no_activity_sequence': ('There is no activity sequence '
+                    'defined. Please define on in activity configuration.')
+                })
+
+    @classmethod
+    def __register__(cls, module_name):
+        TableHandler = backend.get('TableHandler')
+        cursor = Transaction().cursor
+        sql_table = cls.__table__()
+        table = TableHandler(cursor, cls, module_name)
+
+        code_exists = True
+        if TableHandler.table_exist(cursor, cls._table):
+            table = TableHandler(cursor, cls, module_name)
+            code_exists = table.column_exist('code')
+
+        super(Activity, cls).__register__(module_name)
+
+        #Migration from 3.2: Remove type and direction fields
+        table.not_null_action('type', action='remove')
+        table.not_null_action('direction', action='remove')
+
+        #Migration from 3.2: Add code field
+        if (not code_exists and table.column_exist('type') and
+                table.column_exist('direction')):
+            cursor.execute(*sql_table.update(
+                    columns=[sql_table.code],
+                    values=[sql_table.id],
+                    where=sql_table.code == None))
+            table.not_null_action('code', action='add')
 
     @fields.depends('resource')
     def on_change_with_party(self, name=None):
         return Activity._resource_party(self.resource)
+
+    def get_rec_name(self, name):
+        return '[%s] %s' % (self.code, self.subject)
+
+    @classmethod
+    def search_rec_name(cls, name, clause):
+        return ['OR',
+            ('code',) + tuple(clause[1:]),
+            ('subject',) + tuple(clause[1:]),
+            ]
 
     @staticmethod
     def default_dtstart():
@@ -108,3 +160,17 @@ class Activity(ModelSQL, ModelView):
         for _type in ActivityType.search([]):
             res.append((_type.model.model, _type.model.name))
         return res
+
+    @classmethod
+    def create(cls, vlist):
+        pool = Pool()
+        Sequence = pool.get('ir.sequence')
+        Config = pool.get('activity.configuration')
+
+        sequence = Config(1).activity_sequence
+        if not sequence:
+            cls.raise_user_error('no_activity_sequence')
+        vlist = [x.copy() for x in vlist]
+        for vals in vlist:
+            vals['code'] = Sequence.get_id(sequence.id)
+        return super(Activity, cls).create(vlist)
