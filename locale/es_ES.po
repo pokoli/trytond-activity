@@ -4,11 +4,11 @@ msgstr "Content-Type: text/plain; charset=utf-8\n"
 
 msgctxt "field:activity.activity,create_date:"
 msgid "Create Date"
-msgstr "Fecha de creación"
+msgstr "Fecha creación"
 
 msgctxt "field:activity.activity,create_uid:"
 msgid "Create User"
-msgstr "Usuario de creación"
+msgstr "Usuario creación"
 
 msgctxt "field:activity.activity,description:"
 msgid "Description"
@@ -72,11 +72,11 @@ msgstr "Usuario modificación"
 
 msgctxt "field:activity.reference,create_date:"
 msgid "Create Date"
-msgstr "Fecha de creación"
+msgstr "Fecha creación"
 
 msgctxt "field:activity.reference,create_uid:"
 msgid "Create User"
-msgstr "Usuario de creación"
+msgstr "Usuario creación"
 
 msgctxt "field:activity.reference,id:"
 msgid "ID"
@@ -167,6 +167,18 @@ msgstr "Entrante"
 msgctxt "selection:activity.activity,direction:"
 msgid "Outgoing"
 msgstr "Saliente"
+
+msgctxt "selection:activity.activity,state:"
+msgid "Held"
+msgstr "Realizada"
+
+msgctxt "selection:activity.activity,state:"
+msgid "Not Held"
+msgstr "No realizada"
+
+msgctxt "selection:activity.activity,state:"
+msgid "Planned"
+msgstr "Planificada"
 
 msgctxt "selection:activity.activity,type:"
 msgid "Call"
