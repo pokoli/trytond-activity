@@ -122,14 +122,6 @@ class Activity(ModelSQL, ModelView):
         return 'planned'
 
     @staticmethod
-    def default_direction():
-        return 'incoming'
-
-    @staticmethod
-    def default_type():
-        return 'meeting'
-
-    @staticmethod
     def default_resource():
         return ''
 
