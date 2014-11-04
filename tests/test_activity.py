@@ -7,23 +7,17 @@ from trytond.tests.test_tryton import test_view, test_depends
 
 
 class ActivityTestCase(unittest.TestCase):
-    '''
-    Test Activity module.
-    '''
+    'Test Activity module'
 
     def setUp(self):
         trytond.tests.test_tryton.install_module('activity')
 
     def test0005views(self):
-        '''
-        Test views.
-        '''
+        'Test views'
         test_view('activity')
 
     def test0006depends(self):
-        '''
-        Test depends.
-        '''
+        'Test depends'
         test_depends()
 
 
