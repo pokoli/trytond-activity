@@ -1,4 +1,4 @@
-#
+# 
 msgid ""
 msgstr "Content-Type: text/plain; charset=utf-8\n"
 
@@ -102,7 +102,6 @@ msgctxt "field:activity.configuration,write_date:"
 msgid "Write Date"
 msgstr "Data modificación"
 
-#, fuzzy
 msgctxt "field:activity.configuration,write_uid:"
 msgid "Write User"
 msgstr "Usuari modificació"
@@ -302,6 +301,18 @@ msgstr "Activitats"
 msgctxt "model:res.group,name:group_activity_admin"
 msgid "Activities Administration"
 msgstr "Administració Activitats"
+
+msgctxt "selection:activity.activity,state:"
+msgid "Held"
+msgstr "Realitzat"
+
+msgctxt "selection:activity.activity,state:"
+msgid "Not Held"
+msgstr "No realitzat"
+
+msgctxt "selection:activity.activity,state:"
+msgid "Planned"
+msgstr "Planificat"
 
 msgctxt "view:activity.activity:"
 msgid "Activities"

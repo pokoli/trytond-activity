@@ -1,4 +1,4 @@
-#
+# 
 msgid ""
 msgstr "Content-Type: text/plain; charset=utf-8\n"
 
@@ -301,6 +301,18 @@ msgstr "Actividades"
 msgctxt "model:res.group,name:group_activity_admin"
 msgid "Activities Administration"
 msgstr "Administración actividades"
+
+msgctxt "selection:activity.activity,state:"
+msgid "Held"
+msgstr "Realizado"
+
+msgctxt "selection:activity.activity,state:"
+msgid "Not Held"
+msgstr "No realizado"
+
+msgctxt "selection:activity.activity,state:"
+msgid "Planned"
+msgstr "Planificado"
 
 msgctxt "view:activity.activity:"
 msgid "Activities"
