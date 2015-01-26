@@ -262,6 +262,22 @@ msgctxt "model:ir.action,name:act_activity_type"
 msgid "Activity Type"
 msgstr "Tipus d'activitat"
 
+msgctxt "model:ir.action.act_window.domain,name:act_activity_domain_all"
+msgid "All"
+msgstr "Tots"
+
+msgctxt "model:ir.action.act_window.domain,name:act_activity_domain_held"
+msgid "Held"
+msgstr "Realitzada"
+
+msgctxt "model:ir.action.act_window.domain,name:act_activity_domain_not_held"
+msgid "Not Held"
+msgstr "No realitzada"
+
+msgctxt "model:ir.action.act_window.domain,name:act_activity_domain_planned"
+msgid "Planned"
+msgstr "Planificada"
+
 msgctxt "model:ir.sequence,name:sequence_activity"
 msgid "Activity"
 msgstr "Activitat"
@@ -304,15 +320,15 @@ msgstr "Administració Activitats"
 
 msgctxt "selection:activity.activity,state:"
 msgid "Held"
-msgstr "Realitzat"
+msgstr "Realitzada"
 
 msgctxt "selection:activity.activity,state:"
 msgid "Not Held"
-msgstr "No realitzat"
+msgstr "No realitzada"
 
 msgctxt "selection:activity.activity,state:"
 msgid "Planned"
-msgstr "Planificat"
+msgstr "Planificada"
 
 msgctxt "view:activity.activity:"
 msgid "Activities"

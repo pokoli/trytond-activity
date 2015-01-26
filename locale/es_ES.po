@@ -168,7 +168,7 @@ msgstr "Usuario modificación"
 
 msgctxt "field:activity.type,active:"
 msgid "Active"
-msgstr "Activo"
+msgstr "Activa"
 
 msgctxt "field:activity.type,create_date:"
 msgid "Create Date"
@@ -262,6 +262,22 @@ msgctxt "model:ir.action,name:act_activity_type"
 msgid "Activity Type"
 msgstr "Tipo actividad"
 
+msgctxt "model:ir.action.act_window.domain,name:act_activity_domain_all"
+msgid "All"
+msgstr "Todas"
+
+msgctxt "model:ir.action.act_window.domain,name:act_activity_domain_held"
+msgid "Held"
+msgstr "Realizada"
+
+msgctxt "model:ir.action.act_window.domain,name:act_activity_domain_not_held"
+msgid "Not Held"
+msgstr "No realizada"
+
+msgctxt "model:ir.action.act_window.domain,name:act_activity_domain_planned"
+msgid "Planned"
+msgstr "Planificada"
+
 msgctxt "model:ir.sequence,name:sequence_activity"
 msgid "Activity"
 msgstr "Actividad"
@@ -304,15 +320,15 @@ msgstr "Administración actividades"
 
 msgctxt "selection:activity.activity,state:"
 msgid "Held"
-msgstr "Realizado"
+msgstr "Realizada"
 
 msgctxt "selection:activity.activity,state:"
 msgid "Not Held"
-msgstr "No realizado"
+msgstr "No realizada"
 
 msgctxt "selection:activity.activity,state:"
 msgid "Planned"
-msgstr "Planificado"
+msgstr "Planificada"
 
 msgctxt "view:activity.activity:"
 msgid "Activities"
