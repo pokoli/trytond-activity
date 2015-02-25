@@ -82,15 +82,7 @@
 
         <record model="ir.model.access" id="access_activity_activity">
             <field name="model" search="[('model', '=', 'activity.activity')]"/>
-            <field name="perm_read" eval="True"/>
-            <field name="perm_write" eval="False"/>
-            <field name="perm_create" eval="False"/>
-            <field name="perm_delete" eval="False"/>
-        </record>
-
-        <record model="ir.model.access" id="access_activity_activity_admin">
-            <field name="model" search="[('model', '=', 'activity.activity')]"/>
-            <field name="group" ref="group_activity_admin"/>
+            <field name="group" ref="group_activity"/>
             <field name="perm_read" eval="True"/>
             <field name="perm_write" eval="True"/>
             <field name="perm_create" eval="True"/>
@@ -130,6 +122,7 @@
 
         <record model="ir.model.access" id="access_activity_reference">
             <field name="model" search="[('model', '=', 'activity.reference')]"/>
+            <field name="group" ref="group_activity"/>
             <field name="perm_read" eval="True"/>
             <field name="perm_write" eval="False"/>
             <field name="perm_create" eval="False"/>
@@ -176,6 +169,7 @@
 
         <record model="ir.model.access" id="access_activity_type">
             <field name="model" search="[('model', '=', 'activity.type')]"/>
+            <field name="group" ref="group_activity"/>
             <field name="perm_read" eval="True"/>
             <field name="perm_write" eval="False"/>
             <field name="perm_create" eval="False"/>
