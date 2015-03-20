@@ -21,7 +21,7 @@ contains the full copyright notices and license terms. -->
 	<label name="location"/>
 	<field name="location" colspan="3"/>
     <notebook>
-        <page name="description">
+        <page string="Description" id="description">
     	    <field name="description" colspan="4"/>
         </page>
     </notebook>
