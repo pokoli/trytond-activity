@@ -42,7 +42,7 @@ class Activity(ModelSQL, ModelView):
     code = fields.Char('Code', readonly=True, select=True)
     activity_type = fields.Many2One('activity.type', 'Type', required=True)
 
-    subject = fields.Char('Subject', required=True)
+    subject = fields.Char('Subject')
     resource = fields.Reference('Resource', selection='get_resource')
     dtstart = fields.DateTime('Start Date', required=True, select=True)
     dtend = fields.DateTime('End Date', select=True)
@@ -80,11 +80,11 @@ class Activity(ModelSQL, ModelView):
 
         super(Activity, cls).__register__(module_name)
 
-        #Migration from 3.2: Remove type and direction fields
+        # Migration from 3.2: Remove type and direction fields
         table.not_null_action('type', action='remove')
         table.not_null_action('direction', action='remove')
 
-        #Migration from 3.2: Add code field
+        # Migration from 3.2: Add code field
         if (not code_exists and table.column_exist('type') and
                 table.column_exist('direction')):
             cursor.execute(*sql_table.update(
@@ -93,12 +93,17 @@ class Activity(ModelSQL, ModelView):
                     where=sql_table.code == None))
             table.not_null_action('code', action='add')
 
+        # Migration from 3.4.1: subject is no more required
+        table.not_null_action('subject', 'remove')
+
     @fields.depends('resource')
     def on_change_with_party(self, name=None):
         return Activity._resource_party(self.resource)
 
     def get_rec_name(self, name):
-        return '[%s] %s' % (self.code, self.subject)
+        if self.subject:
+            return '[%s] %s' % (self.code, self.subject)
+        return self.code
 
     @classmethod
     def search_rec_name(cls, name, clause):
