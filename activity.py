@@ -100,7 +100,7 @@ class Activity(ModelSQL, ModelView):
     def on_change_with_party(self, name=None):
         if self.resource:
             return Activity._resource_party(self.resource)
-        return self.party
+        return self.party.id if self.party else None
 
     def get_rec_name(self, name):
         if self.subject:
