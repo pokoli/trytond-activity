@@ -96,9 +96,11 @@ class Activity(ModelSQL, ModelView):
         # Migration from 3.4.1: subject is no more required
         table.not_null_action('subject', 'remove')
 
-    @fields.depends('resource')
+    @fields.depends('resource', 'party')
     def on_change_with_party(self, name=None):
-        return Activity._resource_party(self.resource)
+        if self.resource:
+            return Activity._resource_party(self.resource)
+        return self.party
 
     def get_rec_name(self, name):
         if self.subject:
