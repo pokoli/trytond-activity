@@ -98,7 +98,7 @@ class Activity(ModelSQL, ModelView):
 
     @fields.depends('resource', 'party')
     def on_change_with_party(self, name=None):
-        if self.resource:
+        if self.resource and self.resource.id > 0:
             return Activity._resource_party(self.resource)
         return self.party.id if self.party else None
 
