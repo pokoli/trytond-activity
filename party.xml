@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--The COPYRIGHT file at the top level of this repository             
+<!--The COPYRIGHT file at the top level of this repository
 contains the full copyright notices and license terms. -->
 <tryton>
     <data>
         <record model="ir.action.act_window" id="act_activity_form">
             <field name="name">Activities</field>
             <field name="res_model">activity.activity</field>
-            <field name="domain">[("party", "=", Eval('active_id'))]</field>
+            <field name="domain" eval="[('party', 'in', Eval('active_ids'))]"
+                pyson="1"/>
         </record>
         <record model="ir.action.keyword"
                 id="act_open_activities_keyword">
