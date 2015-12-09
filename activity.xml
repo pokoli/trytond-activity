@@ -42,8 +42,6 @@
             <field name="name">Activity</field>
             <field name="res_model">activity.activity</field>
             <field name="search_value"></field>
-            <!-- <field name="domain">[]</field> -->
-            <!-- <field name="context">{}</field> -->
         </record>
         <record model="ir.action.act_window.view" id="act_activity_activity_view1">
             <field name="sequence" eval="10"/>
@@ -58,19 +56,19 @@
         <record model="ir.action.act_window.domain" id="act_activity_domain_planned">
             <field name="name">Planned</field>
             <field name="sequence" eval="10"/>
-            <field name="domain">[('state', '=', 'planned')]</field>
+            <field name="domain" eval="[('state', '=', 'planned')]" pyson="1"/>
             <field name="act_window" ref="act_activity_activity"/>
         </record>
         <record model="ir.action.act_window.domain" id="act_activity_domain_held">
             <field name="name">Held</field>
             <field name="sequence" eval="20"/>
-            <field name="domain">[('state', '=', 'held')]</field>
+            <field name="domain" eval="[('state', '=', 'held')]" pyson="1"/>
             <field name="act_window" ref="act_activity_activity"/>
         </record>
         <record model="ir.action.act_window.domain" id="act_activity_domain_not_held">
             <field name="name">Not Held</field>
             <field name="sequence" eval="30"/>
-            <field name="domain">[('state', '=', 'not_held')]</field>
+            <field name="domain" eval="[('state', '=', 'not_held')]" pyson="1"/>
             <field name="act_window" ref="act_activity_activity"/>
         </record>
         <record model="ir.action.act_window.domain" id="act_activity_domain_all">
@@ -78,6 +76,14 @@
             <field name="sequence" eval="90"/>
             <field name="domain"></field>
             <field name="act_window" ref="act_activity_activity"/>
+        </record>
+
+        <record model="ir.model.access" id="access_activity_activity">
+            <field name="model" search="[('model', '=', 'activity.activity')]"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
         </record>
 
         <record model="ir.model.access" id="access_activity_activity">
@@ -106,8 +112,6 @@
             <field name="name">Activity Reference</field>
             <field name="res_model">activity.reference</field>
             <field name="search_value"></field>
-            <!-- <field name="domain">[]</field> -->
-            <!-- <field name="context">{}</field> -->
         </record>
         <record model="ir.action.act_window.view" id="act_activity_reference_view1">
             <field name="sequence" eval="10"/>
@@ -122,7 +126,6 @@
 
         <record model="ir.model.access" id="access_activity_reference">
             <field name="model" search="[('model', '=', 'activity.reference')]"/>
-            <field name="group" ref="group_activity"/>
             <field name="perm_read" eval="True"/>
             <field name="perm_write" eval="False"/>
             <field name="perm_create" eval="False"/>
@@ -169,7 +172,6 @@
 
         <record model="ir.model.access" id="access_activity_type">
             <field name="model" search="[('model', '=', 'activity.type')]"/>
-            <field name="group" ref="group_activity"/>
             <field name="perm_read" eval="True"/>
             <field name="perm_write" eval="False"/>
             <field name="perm_create" eval="False"/>
