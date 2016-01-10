@@ -1,4 +1,4 @@
-# 
+#
 msgid ""
 msgstr "Content-Type: text/plain; charset=utf-8\n"
 
@@ -202,6 +202,10 @@ msgctxt "field:activity.type,write_uid:"
 msgid "Write User"
 msgstr "Usuari modificació"
 
+msgctxt "field:party.party,activities:"
+msgid "Activities"
+msgstr "Activitats"
+
 msgctxt "model:activity.activity,name:"
 msgid "Activity"
 msgstr "Activitat"
@@ -337,6 +341,18 @@ msgstr "Activitats"
 msgctxt "view:activity.activity:"
 msgid "Activity"
 msgstr "Activitat"
+
+msgctxt "view:activity.activity:"
+msgid "Description"
+msgstr "Descripció"
+
+msgctxt "view:activity.activity:"
+msgid "End Time"
+msgstr "Temps finalització"
+
+msgctxt "view:activity.activity:"
+msgid "Start Time"
+msgstr "Hora d'inici"
 
 msgctxt "view:activity.configuration:"
 msgid "Activity Configuration"
