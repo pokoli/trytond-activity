@@ -74,7 +74,6 @@
         <record model="ir.action.act_window.domain" id="act_activity_domain_all">
             <field name="name">All</field>
             <field name="sequence" eval="90"/>
-            <field name="domain"></field>
             <field name="act_window" ref="act_activity_activity"/>
         </record>
 
