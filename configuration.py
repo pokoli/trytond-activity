@@ -14,7 +14,8 @@ class Configuration(ModelSQL, ModelView):
             'Activity Sequence', required=True,
             domain=[
                 ('code', '=', 'activity.activity'),
-                ]), 'get_company_config', 'set_company_config')
+                ]),
+        'get_company_config', 'set_company_config')
 
     @classmethod
     def get_company_config(self, configs, names):

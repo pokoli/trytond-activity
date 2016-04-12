@@ -3,13 +3,10 @@
 from trytond.model import fields
 from trytond.pool import PoolMeta
 
-
 __all__ = ['Party']
-__metaclass__ = PoolMeta
 
 
 class Party:
     __name__ = "party.party"
-
-    activities = fields.One2Many('activity.activity', 'party',
-        'Activities')
+    __metaclass__ = PoolMeta
+    activities = fields.One2Many('activity.activity', 'party', 'Activities')
