@@ -44,7 +44,7 @@ msgstr "Empleado"
 
 msgctxt "field:activity.activity,id:"
 msgid "ID"
-msgstr "Identificador"
+msgstr "ID"
 
 msgctxt "field:activity.activity,location:"
 msgid "Location"
@@ -84,15 +84,15 @@ msgstr "Secuencia actividad"
 
 msgctxt "field:activity.configuration,create_date:"
 msgid "Create Date"
-msgstr "Fecha de creación"
+msgstr "Fecha creación"
 
 msgctxt "field:activity.configuration,create_uid:"
 msgid "Create User"
-msgstr "Usuario de creación"
+msgstr "Usuario creación"
 
 msgctxt "field:activity.configuration,id:"
 msgid "ID"
-msgstr "Identificador"
+msgstr "ID"
 
 msgctxt "field:activity.configuration,rec_name:"
 msgid "Name"
@@ -116,15 +116,15 @@ msgstr "Empresa"
 
 msgctxt "field:activity.configuration.company,create_date:"
 msgid "Create Date"
-msgstr "Fecha de creación"
+msgstr "Fecha creación"
 
 msgctxt "field:activity.configuration.company,create_uid:"
 msgid "Create User"
-msgstr "Usuario de creación"
+msgstr "Usuario creación"
 
 msgctxt "field:activity.configuration.company,id:"
 msgid "ID"
-msgstr "Identificador"
+msgstr "ID"
 
 msgctxt "field:activity.configuration.company,rec_name:"
 msgid "Name"
@@ -148,7 +148,7 @@ msgstr "Usuario creación"
 
 msgctxt "field:activity.reference,id:"
 msgid "ID"
-msgstr "Identificador"
+msgstr "ID"
 
 msgctxt "field:activity.reference,model:"
 msgid "Model"
@@ -172,15 +172,15 @@ msgstr "Activa"
 
 msgctxt "field:activity.type,create_date:"
 msgid "Create Date"
-msgstr "Fecha de creación"
+msgstr "Fecha creación"
 
 msgctxt "field:activity.type,create_uid:"
 msgid "Create User"
-msgstr "Usuario de creación"
+msgstr "Usuario creación"
 
 msgctxt "field:activity.type,id:"
 msgid "ID"
-msgstr "Identificador"
+msgstr "ID"
 
 msgctxt "field:activity.type,name:"
 msgid "Name"

@@ -20,7 +20,7 @@ msgstr "Codi"
 
 msgctxt "field:activity.activity,create_date:"
 msgid "Create Date"
-msgstr "Data de creació"
+msgstr "Data creació"
 
 msgctxt "field:activity.activity,create_uid:"
 msgid "Create User"
@@ -44,7 +44,7 @@ msgstr "Empleat"
 
 msgctxt "field:activity.activity,id:"
 msgid "ID"
-msgstr "Identificador"
+msgstr "ID"
 
 msgctxt "field:activity.activity,location:"
 msgid "Location"
@@ -84,15 +84,15 @@ msgstr "Seqüencia activitats"
 
 msgctxt "field:activity.configuration,create_date:"
 msgid "Create Date"
-msgstr "Data de creació"
+msgstr "Data creació"
 
 msgctxt "field:activity.configuration,create_uid:"
 msgid "Create User"
-msgstr "Usuari de creació"
+msgstr "Usuari creació"
 
 msgctxt "field:activity.configuration,id:"
 msgid "ID"
-msgstr "Identificador"
+msgstr "ID"
 
 msgctxt "field:activity.configuration,rec_name:"
 msgid "Name"
@@ -100,7 +100,7 @@ msgstr "Nom"
 
 msgctxt "field:activity.configuration,write_date:"
 msgid "Write Date"
-msgstr "Data modificación"
+msgstr "Data modificació"
 
 msgctxt "field:activity.configuration,write_uid:"
 msgid "Write User"
@@ -116,15 +116,15 @@ msgstr "Empresa"
 
 msgctxt "field:activity.configuration.company,create_date:"
 msgid "Create Date"
-msgstr "Data de creació"
+msgstr "Data creació"
 
 msgctxt "field:activity.configuration.company,create_uid:"
 msgid "Create User"
-msgstr "Usuari de creació"
+msgstr "Usuari creació"
 
 msgctxt "field:activity.configuration.company,id:"
 msgid "ID"
-msgstr "Identificador"
+msgstr "ID"
 
 msgctxt "field:activity.configuration.company,rec_name:"
 msgid "Name"
@@ -132,7 +132,7 @@ msgstr "Nom"
 
 msgctxt "field:activity.configuration.company,write_date:"
 msgid "Write Date"
-msgstr "Data modificación"
+msgstr "Data modificació"
 
 msgctxt "field:activity.configuration.company,write_uid:"
 msgid "Write User"
@@ -140,7 +140,7 @@ msgstr "Usuari modificació"
 
 msgctxt "field:activity.reference,create_date:"
 msgid "Create Date"
-msgstr "Data de creació"
+msgstr "Data creació"
 
 msgctxt "field:activity.reference,create_uid:"
 msgid "Create User"
@@ -148,7 +148,7 @@ msgstr "Usuari creació"
 
 msgctxt "field:activity.reference,id:"
 msgid "ID"
-msgstr "Identificador"
+msgstr "ID"
 
 msgctxt "field:activity.reference,model:"
 msgid "Model"
@@ -172,15 +172,15 @@ msgstr "Actiu"
 
 msgctxt "field:activity.type,create_date:"
 msgid "Create Date"
-msgstr "Data de creació"
+msgstr "Data creació"
 
 msgctxt "field:activity.type,create_uid:"
 msgid "Create User"
-msgstr "Usuari de creació"
+msgstr "Usuari creació"
 
 msgctxt "field:activity.type,id:"
 msgid "ID"
-msgstr "Identificador"
+msgstr "ID"
 
 msgctxt "field:activity.type,name:"
 msgid "Name"
@@ -196,7 +196,7 @@ msgstr "Seqüència"
 
 msgctxt "field:activity.type,write_date:"
 msgid "Write Date"
-msgstr "Data modificación"
+msgstr "Data modificació"
 
 msgctxt "field:activity.type,write_uid:"
 msgid "Write User"
