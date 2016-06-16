@@ -2,29 +2,29 @@
 <!--The COPYRIGHT file at the top level of this repository
 contains the full copyright notices and license terms. -->
 <form string="Activity">
-	<label name="subject"/>
-	<field name="subject"/>
-	<label name="code"/>
-	<field name="code"/>
+    <label name="subject"/>
+    <field name="subject"/>
+    <label name="code"/>
+    <field name="code"/>
     <label name="activity_type"/>
     <field name="activity_type" widget="selection"/>
-	<label name="employee"/>
-	<field name="employee"/>
-	<label name="dtstart"/>
-	<field name="dtstart"/>
-	<label name="dtend"/>
-	<field name="dtend"/>
-	<label name="resource"/>
+    <label name="employee"/>
+    <field name="employee"/>
+    <label name="dtstart"/>
+    <field name="dtstart"/>
+    <label name="dtend"/>
+    <field name="dtend"/>
+    <label name="resource"/>
     <field name="resource"/>
     <label name="party"/>
     <field name="party"/>
-	<label name="location"/>
-	<field name="location" colspan="3"/>
+    <label name="location"/>
+    <field name="location" colspan="3"/>
     <notebook>
         <page string="Description" id="description">
-    	    <field name="description" colspan="4"/>
+            <field name="description" colspan="4"/>
         </page>
     </notebook>
-	<label name="state"/>
+    <label name="state"/>
     <field name="state"/>
 </form>
