@@ -55,7 +55,7 @@ if minor_version % 2:
 
 setup(name=name,
     version=version,
-    description='Tryton Account Bank Module',
+    description='Tryton Activity Module',
     long_description=read('README'),
     author='NaN·tic',
     author_email='info@nan-tic.com',
