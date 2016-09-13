@@ -2,7 +2,7 @@
 # copyright notices and license terms.
 import datetime
 
-from trytond.model import ModelSQL, ModelView, fields
+from trytond.model import ModelSQL, ModelView, fields, sequence_ordered
 from trytond.pool import Pool
 from trytond.transaction import Transaction
 from trytond import backend
@@ -10,22 +10,15 @@ from trytond import backend
 __all__ = ['ActivityType', 'ActivityReference', 'Activity']
 
 
-class ActivityType(ModelSQL, ModelView):
+class ActivityType(sequence_ordered(), ModelSQL, ModelView):
     'Activity Type'
     __name__ = "activity.type"
-    _order = [('sequence', 'ASC'), ('id', 'ASC')]
     name = fields.Char('Name', required=True, translate=True)
-    sequence = fields.Integer('Sequence')
     active = fields.Boolean('Active')
 
     @staticmethod
     def default_active():
         return True
-
-    @staticmethod
-    def order_sequence(tables):
-        table, _ = tables[None]
-        return [table.sequence == None, table.sequence]
 
 
 class ActivityReference(ModelSQL, ModelView):
