@@ -16,3 +16,6 @@ def register():
         Activity,
         Party,
         module='activity', type_='model')
+    Pool.register(
+        PartyReplace,
+        module='carrier', type_='wizard')
