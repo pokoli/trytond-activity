@@ -32,7 +32,7 @@ msgstr "Empleado"
 
 msgctxt "field:activity.activity,id:"
 msgid "ID"
-msgstr "Identificador"
+msgstr "ID"
 
 msgctxt "field:activity.activity,location:"
 msgid "Location"
@@ -80,7 +80,7 @@ msgstr "Usuario creación"
 
 msgctxt "field:activity.reference,id:"
 msgid "ID"
-msgstr "Identificador"
+msgstr "ID"
 
 msgctxt "field:activity.reference,model:"
 msgid "Model"

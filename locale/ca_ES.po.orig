@@ -4,7 +4,7 @@ msgstr "Content-Type: text/plain; charset=utf-8\n"
 
 msgctxt "field:activity.activity,create_date:"
 msgid "Create Date"
-msgstr "Data de creació"
+msgstr "Data creació"
 
 msgctxt "field:activity.activity,create_uid:"
 msgid "Create User"
@@ -32,7 +32,7 @@ msgstr "Empleat"
 
 msgctxt "field:activity.activity,id:"
 msgid "ID"
-msgstr "Identificador"
+msgstr "ID"
 
 msgctxt "field:activity.activity,location:"
 msgid "Location"
@@ -72,7 +72,7 @@ msgstr "Usuari modificació"
 
 msgctxt "field:activity.reference,create_date:"
 msgid "Create Date"
-msgstr "Data de creació"
+msgstr "Data creació"
 
 msgctxt "field:activity.reference,create_uid:"
 msgid "Create User"
@@ -80,7 +80,7 @@ msgstr "Usuari creació"
 
 msgctxt "field:activity.reference,id:"
 msgid "ID"
-msgstr "Identificador"
+msgstr "ID"
 
 msgctxt "field:activity.reference,model:"
 msgid "Model"
