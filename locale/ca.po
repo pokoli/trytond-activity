@@ -8,7 +8,7 @@ msgid ""
 "configuration."
 msgstr ""
 "No hi ha cap seqüencia definida per les activitats. Siusplau, definiu-n'hi "
-"una a la confiugració."
+"una a la configuració."
 
 msgctxt "field:activity.activity,activity_type:"
 msgid "Type"
@@ -266,13 +266,13 @@ msgctxt "model:ir.action,name:act_activity_type"
 msgid "Activity Type"
 msgstr "Tipus d'activitat"
 
+msgctxt "model:ir.action.act_window.domain,name:"
+msgid "Held"
+msgstr "Realitzada"
+
 msgctxt "model:ir.action.act_window.domain,name:act_activity_domain_all"
 msgid "All"
 msgstr "Tots"
-
-msgctxt "model:ir.action.act_window.domain,name:act_activity_domain_held"
-msgid "Held"
-msgstr "Realitzada"
 
 msgctxt "model:ir.action.act_window.domain,name:act_activity_domain_not_held"
 msgid "Not Held"
@@ -333,14 +333,6 @@ msgstr "No realitzada"
 msgctxt "selection:activity.activity,state:"
 msgid "Planned"
 msgstr "Planificada"
-
-msgctxt "view:activity.activity:"
-msgid "Activities"
-msgstr "Activitats"
-
-msgctxt "view:activity.activity:"
-msgid "Activity"
-msgstr "Activitat"
 
 msgctxt "view:activity.activity:"
 msgid "Description"

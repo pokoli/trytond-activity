@@ -266,13 +266,13 @@ msgctxt "model:ir.action,name:act_activity_type"
 msgid "Activity Type"
 msgstr "Tipo actividad"
 
+msgctxt "model:ir.action.act_window.domain,name:"
+msgid "Held"
+msgstr "Realizada"
+
 msgctxt "model:ir.action.act_window.domain,name:act_activity_domain_all"
 msgid "All"
 msgstr "Todas"
-
-msgctxt "model:ir.action.act_window.domain,name:act_activity_domain_held"
-msgid "Held"
-msgstr "Realizada"
 
 msgctxt "model:ir.action.act_window.domain,name:act_activity_domain_not_held"
 msgid "Not Held"
@@ -333,14 +333,6 @@ msgstr "No realizada"
 msgctxt "selection:activity.activity,state:"
 msgid "Planned"
 msgstr "Planificada"
-
-msgctxt "view:activity.activity:"
-msgid "Activities"
-msgstr "Actividades"
-
-msgctxt "view:activity.activity:"
-msgid "Activity"
-msgstr "Actividad"
 
 msgctxt "view:activity.activity:"
 msgid "Description"
