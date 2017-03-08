@@ -219,5 +219,34 @@ contains the full copyright notices and license terms. -->
         <record model="activity.type" id="meeting_type">
             <field name="name">Meeting</field>
         </record>
+
+        <!-- Activity calendar -->
+        <!-- Records view -->
+        <record model="ir.ui.view" id="activity_calendar_view_calendar">
+            <field name="model">activity.activity</field>
+            <field name="type">calendar</field>
+            <field name="name">activity_calendar</field>
+        </record>
+        <!-- Actions -->
+        <record model="ir.action.act_window" id="act_activity_calendar">
+            <field name="name">Activity calendar</field>
+            <field name="res_model">activity.activity</field>
+        </record>
+
+        <record model="ir.action.act_window.view" id="act_activity_calendar_calendar">
+            <field name="sequence" eval="10"/>
+            <field name="view" ref="activity_calendar_view_calendar"/>
+            <field name="act_window" ref="act_activity_calendar"/>
+        </record>
+
+        <record model="ir.action.act_window.view" id="act_activity_calendar_form">
+            <field name="sequence" eval="20"/>
+            <field name="view" ref="activity_activity_form_view"/>
+            <field name="act_window" ref="act_activity_calendar"/>
+        </record>
+
+        <!-- Menu calendar activities -->
+        <menuitem action="act_activity_calendar" id="menu_activity_calendar"
+            parent="menu_activity_activity" name="Calendar activities"/>
     </data>
 </tryton>

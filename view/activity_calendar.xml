@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+
+<calendar string="Calendar activities" dtstart="dtstart" dtend="dtend">
+    <field name="subject" />
+    <field name="state" />
+</calendar>
