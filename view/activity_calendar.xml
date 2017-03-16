@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
-
-<calendar string="Calendar activities" dtstart="dtstart" dtend="dtend">
+<!--The COPYRIGHT file at the top level of this repository
+contains the full copyright notices and license terms. -->
+<calendar string="Activities" dtstart="dtstart" dtend="dtend">
     <field name="subject" />
     <field name="state" />
 </calendar>

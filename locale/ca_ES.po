@@ -250,6 +250,10 @@ msgctxt "model:ir.action,name:act_activity_activity"
 msgid "Activity"
 msgstr "Activitat"
 
+msgctxt "model:ir.action,name:act_activity_calendar"
+msgid "Activities"
+msgstr "Activitats"
+
 msgctxt "model:ir.action,name:act_activity_configuration"
 msgid "Configuration"
 msgstr "Configuració"
@@ -295,6 +299,10 @@ msgid "Activities"
 msgstr "Activitats"
 
 msgctxt "model:ir.ui.menu,name:menu_activity_activity"
+msgid "Activities"
+msgstr "Activitats"
+
+msgctxt "model:ir.ui.menu,name:menu_activity_calendar"
 msgid "Activities"
 msgstr "Activitats"
 
