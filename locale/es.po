@@ -298,6 +298,10 @@ msgctxt "model:ir.ui.menu,name:menu_activity_activity"
 msgid "Activities"
 msgstr "Actividades"
 
+msgctxt "model:ir.ui.menu,name:menu_activity_calendar"
+msgid "Activities"
+msgstr "Activitats"
+
 msgctxt "model:ir.ui.menu,name:menu_activity_configuration"
 msgid "Configuration"
 msgstr "Configuración"
