@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<!--The COPYRIGHT file at the top level of this repository
+contains the full copyright notices and license terms. -->
+<tryton>
+    <data>
+        <record model="ir.ui.view" id="activity_configuration_view_form">
+            <field name="model">activity.configuration</field>
+            <field name="type">form</field>
+            <field name="name">configuration_form</field>
+        </record>
+        <record model="ir.action.act_window" id="act_activity_configuration">
+            <field name="name">Configuration</field>
+            <field name="res_model">activity.configuration</field>
+        </record>
+        <record model="ir.action.act_window.view"
+                id="act_activity_configuration_view1">
+            <field name="sequence" eval="10"/>
+            <field name="view" ref="activity_configuration_view_form"/>
+            <field name="act_window" ref="act_activity_configuration"/>
+        </record>
+
+        <menuitem action="act_activity_configuration"
+            id="menu_activity_configuration"
+            parent="menu_configuration" sequence="10"/>
+
+
+        <record model="ir.ui.menu-res.group" id="menu_configuration_group">
+            <field name="menu" ref="menu_configuration"/>
+            <field name="group" ref="group_activity_admin"/>
+        </record>
+
+        <record model="ir.ui.menu-res.group" id="menu_activity_group">
+            <field name="menu" ref="menu_activity"/>
+            <field name="group" ref="group_activity"/>
+        </record>
+        <record model="ir.sequence.type" id="sequence_type_activity">
+            <field name="name">Activity</field>
+            <field name="code">activity.activity</field>
+        </record>
+        <record model="ir.sequence.type-res.group"
+            id="sequence_type_activity_group_admin">
+            <field name="sequence_type" ref="sequence_type_activity"/>
+            <field name="group" ref="res.group_admin"/>
+        </record>
+        <record model="ir.sequence.type-res.group"
+            id="sequence_type_activity_group_activity_admin">
+            <field name="sequence_type" ref="sequence_type_activity"/>
+            <field name="group" ref="group_activity_admin"/>
+        </record>
+
+        <record model="ir.sequence" id="sequence_activity">
+            <field name="name">Activity</field>
+            <field name="code">activity.activity</field>
+        </record>
+    </data>
+</tryton>
