@@ -9,8 +9,6 @@ __metaclass__ = PoolMeta
 
 
 class Party:
-    'Party'
-    __name__ = "Party"
-
+    __name__ = 'party.party'
     activities = fields.One2Many('activity.activity', 'party',
         'Activities')
